@@ -4,26 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FavoriteColor)
-        </th>
-        <th></th>
-    </tr>
+<h2>Students</h2>
 
 @foreach (var item in Model) {
+    <a href="#" class="btn btn-primary"Go somewhere @Html.ActionLink("Details", "Details", new { id = item.StudentID })</a>
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.FirstName)
@@ -34,12 +18,5 @@
         <td>
             @Html.DisplayFor(modelItem => item.FavoriteColor)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.StudentID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.StudentID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.StudentID })
-        </td>
     </tr>
 }
-
-</table>
