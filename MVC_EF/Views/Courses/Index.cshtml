@@ -9,17 +9,17 @@
 <div class="container">
     @foreach (var item in Model)
     {
-        <div class="card" style="width: 18rem; float:left;">
+        <div class="card" style="width: 25rem; float:left;">
             <div class="col-sm">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
                         @Html.DisplayFor(modelItem => item.CourseName)
                     </li>
                     <li class="list-group-item">
-                        @Html.DisplayFor(modelItem => item.TermCode)
+                        <span>Term: </span>@Html.DisplayFor(modelItem => item.TermCode)
                     </li>
                     <li class="list-group-item">
-                        @Html.DisplayFor(modelItem => item.CourseNumber)
+                        <span>CRN: </span>@Html.DisplayFor(modelItem => item.CourseNumber)
                     </li>
                 </ul>
             </div>

@@ -6,17 +6,16 @@
 
 <h2>Students</h2>
 
-@foreach (var item in Model) {
-    <a href="#" class="btn btn-primary"Go somewhere @Html.ActionLink("Details", "Details", new { id = item.StudentID })</a>
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FavoriteColor)
-        </td>
-    </tr>
-}
+<div class="container">
+    @foreach (var item in Model)
+    {
+        <a href="@Url.Action("Details", new { id = item.StudentID })">
+            <div class="card" style="width: 25rem; float:left;">
+                <div class="list-group-item">
+                    <h4 class="card-title">@Html.DisplayFor(modelItem => item.LastName), @Html.DisplayFor(modelItem => item.FirstName)</h4>
+                    <span>Favorite color:</span><p class="card-text">@Html.DisplayFor(modelItem => item.FavoriteColor)</p>
+                </div>
+            </div>
+        </a>
+    }
+</div>
